@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="styles/Favicon.svg" type="image/x-icon">
+    <title> Corona Arabia | كورونا بالعربي</title>
+<meta name="description" content="أبرز إحصائيات  الوضع  الحالي  لمكافحة  فيروس  كورونا  المستجد  في الوطن العربي  و اعداد  الاصابة  و الوفاة  بفايروس
+كورونا  المستجد  ونسب  الشفاء  و نصائح  للجمهور حول  كيفية  الوقاية  ضد  فايروس كورونا  المستجد - كوفيد 19 المستجد - اخر اخبار لقاح  فايروس كورونا المستجد في مصر - السعودية - الامارات - قطر -  الكويت" />
+</head>
+<nav>
+    <div class="drop">
+        <div id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1 id="selectedCountry"></h1>
+        <img id="countryFlag" src="كورونا مصر السعودية الامارات قطر الكويت الاردن">
+    </div>
+    <div>
+        <img src="styles/icon.svg" class="icon" alt="اعداد فايروس كورونا مصر السعودية الامارات قطر الكويت الاردن">
+        <h1>كورونا بالعربي</h1>
+    </div>
+</nav>
+<body>
+    <div id="loading-screen">
+        <img src="styles/icon.svg" alt="اعداد فايروس كورونا مصر السعودية الامارات قطر الكويت الاردن">
+        <img src="styles/corona-icon.svg" alt=" اخبار فايروس كورونا بالعربي ">
+        <img src="styles/icon.svg" alt="اعداد اصابة فايروس كورونا اليوم">
+    </div>
+    <section class="one">
+        <div id="side-bar" style="width: 0px;">
+            <h1>اختر بلدك</h1>
+        <button id="country" class="default" value="eg"><img id="countriesFlag" src="styles/EG.svg" alt="مصر"><h2 id="countryName">مصر</h2> </button>
+        <button id="country" value="sa"><img id="countriesFlag" src="styles/SA.svg" alt="السعودية"><h2 id="countryName">السعودية</h2></button>
+        <button id="country" value="qa"><img id="countriesFlag" src="styles/QA.svg" alt="قطر"><h2 id="countryName">قطر</h2></button>
+        <button id="country" value="ae"><img id="countriesFlag" src="styles/AE.svg" alt="الامارات"><h2 id="countryName">الامارات</h2></button>
+        <button id="country" value="kw"><img id="countriesFlag" src="styles/KW.svg" alt="الكويت"><h2 id="countryName">الكويت</h2></button>
+        <button id="country" value="jo"><img id="countriesFlag" src="styles/JO.svg" alt="الاردن"><h2 id="countryName">الاردن</h2></button>
+        </div>
+        <div class="main">
+            <div class="text">
+                <h1>حالات اليوم</h1>
+                <h3 id="updated"></h3>
+            </div>
+                <div class="newCases">
+                    <div>
+                        <h1 id="newCases"></h1>
+                        <h1>حالة جديدة</h1>
+                    </div>
+                    <img src="styles/newCases.svg" alt="اصابة كورونا جديدة">
+                </div>
+                <div class="newDeaths">
+                    <div>
+                        <h1 id="newDeaths"></h1>
+                        <h1>وفاة جديدة</h1>
+                    </div>
+                    <img src="styles/heart.svg" alt="وفاة كورونا جديدة">
+                </div>
+                <div class="newRecovers">
+                    <div>
+                        <h1 id="newRecovered"></h1>
+                        <h1> حالة شفاء<br> جديدة </h1>
+                    </div>
+                    <img src="styles/recovery.svg" alt="شفاء كورونا جديد">
+                </div>
+                <h1 class="allCases">إجمالي الحالات</h1>
+                <div class="activeCases">
+                    <div>
+                        <h1 id="activeCases"></h1>
+                        <h1>حالة نشطة</h1>
+                    </div>
+                    <img src="styles/lungs.svg" alt="حالات نشطة">
+                </div>
+                <div class="recovered">
+                    <div>
+                        <h1 id="recovered"></h1>
+                        <h1>حالة شفاء</h1>
+                    </div>
+                    <img src="styles/recovery.svg" alt="اجمالي حالات الشفاء">
+                </div>
+                <div class="deaths">
+                    <div>
+                        <h1 id="deaths"></h1>
+                        <h1>حالة وفاة</h1>
+                    </div>
+                    <img src="styles/heart.svg" alt="اجمالي الوفيات">
+                </div>
+                <div class="cases">
+                    <div>
+                        <h1 id="cases"></h1>
+                        <h1>حالة مصابة</h1>
+                    </div>
+                    <img src="styles/cases.svg" alt="اجمالي الوفيات">
+                </div>
+                <div class="deathRatio">
+                    <h1 id="deathRatio"></h1>
+                    <h1>نسبة الوفيات</h1>
+                </div>
+                <div class="recoveryRatio">
+                    <h1 id="recoveryRatio"></h1>
+                    <h1>نسبة الشفاء</h1>
+                </div>
+                <div class="activeRatio">
+                    <h1> نسبة الحالات النشطة</h1>
+                    <h1 id="activeRatio"></h1>
+                </div>
+        </div>
+    </section>
+    <section class="two">
+        <h1 class="recordHeading">سجل الحالات</h1>
+        <div class="recordOne">
+            <div>
+                <h1>حالة جديدة</h1>
+                <h1 id="recordedCases"></h1>
+            </div>
+            <div>
+                <h1>وفاة جديدة</h1>
+                <h1 id="recordedDeath"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الحالات</h1>
+                <h1 id="recordedTotalCases"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الوفيات</h1>
+                <h1 id="recordedTotalDeaths"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الشفاء</h1>
+                <h1 id="recordedTotalCured"></h1>
+            </div>
+            <div>
+                <h1>بتاريخ</h1>
+                <h1 id="date"></h1>
+            </div>
+        </div>
+        <div class="recordTwo">
+            <div>
+                <h1>حالة جديدة</h1>
+                <h1 id="recordedCases"></h1>
+            </div>
+            <div>
+                <h1>وفاة جديدة</h1>
+                <h1 id="recordedDeath"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الحالات</h1>
+                <h1 id="recordedTotalCases"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الوفيات</h1>
+                <h1 id="recordedTotalDeaths"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الشفاء</h1>
+                <h1 id="recordedTotalCured"></h1>
+            </div>
+            <div>
+                <h1>بتاريخ</h1>
+                <h1 id="date"></h1>
+            </div>
+        </div>
+        <div class="recordThree">
+            <div>
+                <h1>حالة جديدة</h1>
+                <h1 id="recordedCases"></h1>
+            </div>
+            <div>
+                <h1>وفاة جديدة</h1>
+                <h1 id="recordedDeath"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الحالات</h1>
+                <h1 id="recordedTotalCases"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الوفيات</h1>
+                <h1 id="recordedTotalDeaths"></h1>
+            </div>
+            <div>
+                <h1>إجمالي الشفاء</h1>
+                <h1 id="recordedTotalCured"></h1>
+            </div>
+            <div>
+                <h1>بتاريخ</h1>
+                <h1 id="date"></h1>
+            </div>
+        </div>
+    </section>
+    <section class="three">
+        <h1>إرشادات</h1>
+        <div class="instructions">
+            <img src="styles/mask-boy.svg" alt="ارشادات الجماية ضد فايروس كورونا">
+            <p>اجعل من ارتداء الكمامة عادة<br> .عندما تكون مع أشخاص آخرين<br> إنّ استعمال الكمامات وحفظها وتنظيفها<br> والتخلص منها بشكل سليم <br>.أمر ضروري لجعلها فعالة قدر الإمكان</p>
+            <img src="styles/wash-hands.svg" alt="ارشادات الجماية ضد فايروس كورونا">
+            <p>.نظف يديك جيداً بانتظام<br> باستخدام مطهر <br> اليدين الكحولي <br>أو اغسلهما بالماء والصابون</p>
+        </div>
+    </section>
+    <footer>
+        <h1>Made with &#128150 by <a target="_blank" href="https://twitter.com/Sherifjrr">Sherif Jr <img src="styles/icons-twitter.svg" alt=""></a> </h1>
+        <a target="_blank" href="https://www.buymeacoffee.com/sherifjr"><img src="styles/Buymeacoffee.svg" alt=""></a>
+    </footer>
+</body>
+<script src="app.js"></script>
+</html>
