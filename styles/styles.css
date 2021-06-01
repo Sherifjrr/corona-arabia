@@ -851,6 +851,9 @@ footer a:nth-child(2) img {
   .one .main .text h1 {
     font-size: 3rem;
   }
+  .one .main .text #updated {
+    font-size: 1rem;
+  }
   .one .main .newCases {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
