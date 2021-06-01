@@ -69,8 +69,8 @@ countryButton.forEach(function (button , value) {
         sideBar.style.width = '0px';
         sideBar.style.padding = '0';
         async function coronaData() {
-            loadingScreen.style.visibility = 'visible'
-            loadingScreen.style.opacity = '100'
+            // loadingScreen.style.visibility = 'visible'
+            // loadingScreen.style.opacity = '100'
             let response = await fetch(`${API}${countryButton[value].value}`);
             try {
                 let result = await response.json();
