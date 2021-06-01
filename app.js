@@ -32,9 +32,6 @@ window.onload = () => {
     document.querySelector('.default').click();
     
 }
-// loading screen
- 
-
 // sideBar toggle
 burgerMenu.addEventListener("click", () => {
     burgerMenu.classList.toggle("active");
@@ -73,7 +70,7 @@ countryButton.forEach(function (button , value) {
             let response = await fetch(`${API}${countryButton[value].value}`);
             try {
                 let result = await response.json();
-                console.log(result);
+
                 let time = new Date(result.data.timeline[0].updated_at) ;
                 let deathRatioCalc =  result.data.timeline[0].deaths / result.data.timeline[0].confirmed * 100 ;
                 let recoveryRatioCalc = result.data.timeline[0].recovered / result.data.timeline[0].confirmed * 100 ;
