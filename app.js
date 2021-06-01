@@ -30,8 +30,11 @@ let API = "https://corona-status2021.herokuapp.com/http://corona-api.com/countri
 // Make eg data onload
 window.onload = () => {
     document.querySelector('.default').click();
+    
 }
-
+// loading screen
+    loadingScreen.style.visibility = 'visible'
+    loadingScreen.style.opacity = '100'
 
 // sideBar toggle
 burgerMenu.addEventListener("click", () => {
