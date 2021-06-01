@@ -33,8 +33,7 @@ window.onload = () => {
     
 }
 // loading screen
-    loadingScreen.style.visibility = 'visible'
-    loadingScreen.style.opacity = '100'
+ 
 
 // sideBar toggle
 burgerMenu.addEventListener("click", () => {
@@ -69,8 +68,8 @@ countryButton.forEach(function (button , value) {
         sideBar.style.width = '0px';
         sideBar.style.padding = '0';
         async function coronaData() {
-            // loadingScreen.style.visibility = 'visible'
-            // loadingScreen.style.opacity = '100'
+            loadingScreen.style.visibility = 'visible'
+            loadingScreen.style.opacity = '100'
             let response = await fetch(`${API}${countryButton[value].value}`);
             try {
                 let result = await response.json();
@@ -100,6 +99,7 @@ countryButton.forEach(function (button , value) {
                     recordedTotalCured[i].innerHTML = `${result.data.timeline[i+1].recovered}`
                     date[i].innerHTML = `${result.data.timeline[i+1].date}`
                 }
+                loadingScreen.style.visibility = 'hidden'
                 loadingScreen.style.opacity = '0'
             }
             catch (error) {

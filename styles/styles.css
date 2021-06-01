@@ -132,7 +132,6 @@ nav #burger-menu.active span:nth-child(3) {
 }
 
 body #loading-screen {
-  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
