@@ -55,7 +55,6 @@ burgerMenu.addEventListener("click", () => {
         }
     }
 })
-
 // fetching data and update the UI
 countryButton.forEach(function (button , value) {
     button.addEventListener("click", () => {

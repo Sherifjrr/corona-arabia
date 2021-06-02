@@ -2,4 +2,4 @@
 ## Technologies : 
 ### HTML - Sass - Vanilla JavaScript 🍦
 ### Designed By figma 
-## Live at 🚀👩‍🚀: coronaarabia.com
+## Live at 🚀👩‍🚀: www.coronaarabia.com
