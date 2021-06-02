@@ -129,6 +129,9 @@ body {
             max-width: 15rem;
             animation: spin 8s linear infinite;
         }
+        img:nth-child(3) {
+            margin-top: 25rem;
+        }
     }
 }
 .one {
@@ -211,6 +214,7 @@ body {
             @include boxDesign;
         }
         .newCases, .newDeaths, .newRecovers {
+            padding: .5rem;
            img{
                 max-width: 8rem;
            } 
@@ -444,6 +448,10 @@ footer {
 
 @media (max-width: 768px) {
     nav {
+        .icon {
+            top: 0;
+            margin-top: 0.5rem;
+        }
         #burger-menu.active {
             margin-left: 150%;
         }
@@ -504,12 +512,11 @@ footer {
 }
 
     .two {
-        padding: 0rem 2rem;
-
         h1 {
             font-size: 1.65rem;
         }
         .recordOne, .recordTwo, .recordThree {
+            margin: 0rem 2rem;
             grid-column: 1 / span 10 ;
             flex-direction: column;
             flex-wrap: wrap;
@@ -524,7 +531,6 @@ footer {
                 justify-content: space-between;
                 align-items: baseline;
             }
-            
         }
     }
 

@@ -156,6 +156,10 @@ body #loading-screen img {
           animation: spin 8s linear infinite;
 }
 
+body #loading-screen img:nth-child(3) {
+  margin-top: 25rem;
+}
+
 .one #side-bar {
   display: -ms-grid;
   display: grid;
@@ -341,6 +345,10 @@ body #loading-screen img {
   -webkit-box-shadow: 0px 6px 0px #18191F;
           box-shadow: 0px 6px 0px #18191F;
   border-radius: 1rem;
+}
+
+.one .main .newCases, .one .main .newDeaths, .one .main .newRecovers {
+  padding: .5rem;
 }
 
 .one .main .newCases img, .one .main .newDeaths img, .one .main .newRecovers img {
@@ -822,6 +830,10 @@ footer a:nth-child(2) img {
 }
 
 @media (max-width: 768px) {
+  nav .icon {
+    top: 0;
+    margin-top: 0.5rem;
+  }
   nav #burger-menu.active {
     margin-left: 150%;
   }
@@ -916,13 +928,11 @@ footer a:nth-child(2) img {
     -ms-grid-column-span: 6;
     grid-area: 12 / 2 / 12 / span 6;
   }
-  .two {
-    padding: 0rem 2rem;
-  }
   .two h1 {
     font-size: 1.65rem;
   }
   .two .recordOne, .two .recordTwo, .two .recordThree {
+    margin: 0rem 2rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 10;
     grid-column: 1 / span 10;
