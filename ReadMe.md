@@ -1,5 +1,28 @@
-# Corona arabia is a live status website for covid 19 🦠
-## Technologies : 
-### HTML - Sass - Vanilla JavaScript 🍦
-### Designed By figma 
-## Live at 🚀👩‍🚀: www.coronaarabia.com
+# Corona Arabia
+
+Corona arabia is a live status website for covid 19 🦠
+
+## Tech Stack
+
+HTML - Sass - Vanilla JavaScript 🍦
+
+Sketched by Figma
+
+## Demo
+
+Live 🚀👩‍🚀
+
+https://www.coronaarabia.com/
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
