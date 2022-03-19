@@ -1,584 +1,602 @@
 // colors
-$yellow: #FFF4CC;
-$black:#18191F;
-$bgColor: #FFFAFA;
-$red: #FF9692;
-$rose: #FFE8E8;
-$mintGreen: #D6FCF7;
-$purple: #E9E7FC;
-$green: #00C6AE;
-$blue: #1947E5;
-$gray: #474A57;
+$yellow: #fff4cc;
+$black: #18191f;
+$bgColor: #fffafa;
+$red: #ff9692;
+$rose: #ffe8e8;
+$mintGreen: #d6fcf7;
+$purple: #e9e7fc;
+$green: #00c6ae;
+$blue: #1947e5;
+$gray: #474a57;
 $white: #fff;
 
 @mixin boxDesign {
-    border: 2px solid $black;
-    box-shadow: 0px 6px 0px $black;
-    border-radius: 1rem;
+  border: 2px solid $black;
+  box-shadow: 0px 6px 0px $black;
+  border-radius: 1rem;
 }
 @mixin flex-row-reverse {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap:wrap;
-    overflow: hidden;
-    text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-align: center;
 }
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 html {
-    font-family: 'Cairo' , sans-serif;
-    font-size: 16px;
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
 }
-
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  border-bottom: #000000 2px solid;
+  padding: 1.25rem;
+  div {
     display: flex;
-    justify-content: space-between;
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      position: relative;
+    }
+    .icon {
+      width: 1.37rem;
+      position: absolute;
+    }
+  }
+
+  .drop {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    height : 5rem;
-    border-bottom: #000000 2px solid ;
-    padding: 1.25rem;
-    div {
-        display: flex;
-        h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            position: relative;
-        }
-        .icon {
-            width: 1.37rem;
-            position: absolute;
-        }
+    justify-content: space-around;
+    width: 15rem;
+    img {
+      height: 2rem;
     }
-  
-    .drop {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        width: 15rem;
-        img {
-            height: 2rem;
-        }
-        #selectedCountry {
-            font-weight: 600;
-        }
+    #selectedCountry {
+      font-weight: 600;
     }
-    #burger-menu {
-        z-index: 1;
-        width: 2.18rem;
-        display: block;
-        cursor: pointer;
-        transition: all 0.8s ease-out;
-        &:hover {
-            opacity: 0.7;
-        }
-        span {
-            display: block;
-            height: 0.25rem;
-            margin: 0.30rem 0;
-            border-radius: 0.30rem;
-            background-color: $black;
-            transition: all 0.5s ease-out;
-           
-        }
+  }
+  #burger-menu {
+    z-index: 1;
+    width: 2.18rem;
+    display: block;
+    cursor: pointer;
+    transition: all 0.8s ease-out;
+    &:hover {
+      opacity: 0.7;
     }
-    #burger-menu.active {
-        margin-left: 75%;
-        z-index: 1;
-        position: fixed;
-        span:nth-child(1){
-            transform: rotate(45deg) translateY(12px) ;
-        }
-        span:nth-child(2){
-            opacity: 0;
-        }
-        span:nth-child(3){
-            transform: rotate(-45deg) translateY(-12px);
-        }
+    span {
+      display: block;
+      height: 0.25rem;
+      margin: 0.3rem 0;
+      border-radius: 0.3rem;
+      background-color: $black;
+      transition: all 0.5s ease-out;
     }
+  }
+  #burger-menu.active {
+    margin-left: 75%;
+    z-index: 1;
+    position: fixed;
+    span:nth-child(1) {
+      transform: rotate(45deg) translateY(12px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-12px);
+    }
+  }
 }
 body {
-    #loading-screen {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        position: absolute;
-        background-color: $white;
-        width: 100%;
-        height: 200%;
-        transition: all 0.4s ease-in-out;
-        img {
-            margin-top: 12rem;
-            max-width: 15rem;
-            animation: spin 8s linear infinite;
-        }
-        img:nth-child(3) {
-            margin-top: 25rem;
-        }
+  #loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    background-color: $white;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+    img {
+      margin-top: 12rem;
+      max-width: 15rem;
+      animation: spin 8s linear infinite;
     }
+    img:nth-child(3) {
+      margin-top: 25rem;
+    }
+  }
 }
 .one {
-    
-    #side-bar {
-        display: grid;
-        grid-template-rows: repeat(4, 20vh);
-        grid-template-columns: repeat(2,1fr);
-        gap: 1rem;
-        flex-direction: column;
-        position: fixed;
-        justify-content: space-around;
-        align-items: center;
-        top: 0;
-        width: 0;
-        height: 100vh;
-        overflow: hidden;
-        background-color: $white;
-        transition: all 0.6s ease-out;
-        text-align: center;
-        h1 {
-            grid-area: 1 / 1 / 1 / span 2;
-        }
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            border-radius: 5px;
-            padding: 1rem 1rem;
-            font-size: 1rem;
-            font-family: 'Cairo', sans-serif;
-            cursor: pointer;
-            img {
-                width: 3rem;
-                margin-right: 1rem;
-            }
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-        
+  #side-bar {
+    display: grid;
+    grid-template-rows: repeat(4, 20vh);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    flex-direction: column;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    box-shadow: 2px 2px #000000;
+    overflow: hidden;
+    background-color: $white;
+    transition: all 0.6s ease-out;
+    text-align: center;
+    h1 {
+      grid-area: 1 / 1 / 1 / span 2;
     }
-    .main {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows:  auto minmax(max-content, 10rem) auto minmax(max-content,8rem) auto;
-        gap: 1.5rem;
-        margin: 1.5rem;
-        padding: 1.5rem 2rem ;
-        background: $bgColor;
-        @include boxDesign;
-        .text {
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: baseline;
-            grid-area: 1 / 1 / 1 / span 8;
-            h1 {
-                margin-left: 1rem;
-                font-size: 2rem;
-            }
-        }
-        .newCases {
-            grid-area: 2 / 6 / 2 / span 2;
-            background: $yellow;
-            @include boxDesign;
-            @include flex-row-reverse();
-            padding-bottom: 0.25rem;
-        }
-        .newDeaths {
-            grid-area: 2 / 4 / 2 / span 2;
-            @include flex-row-reverse();
-            background: $red;
-            @include boxDesign;
-        }
-        .newRecovers {
-            grid-area: 2 / 2 / 2 / span 2 ;
-            @include flex-row-reverse();
-            background: $mintGreen;
-            @include boxDesign;
-        }
-        .newCases, .newDeaths, .newRecovers {
-            padding: .5rem;
-           img{
-                max-width: 8rem;
-           } 
-        }
-        .allCases {
-            font-size: 2rem;
-            grid-area: 3 / 1 / 3 / span 8;
-            text-align: end;
-        }
-        .cases {
-            grid-area: 4 / 7 / 4 / span 2;
-            background: $yellow;
-            @include flex-row-reverse;
-            @include boxDesign;
-            padding-bottom: 0.25rem;
-        }
-        .deaths {
-            grid-area: 4 / 5 / 4 / span 2;
-            background: $red;
-            @include flex-row-reverse;
-            @include boxDesign; 
-        }
-        .recovered {
-            grid-area: 4 / 3 / 4 / span 2;
-            background: $mintGreen;
-            @include flex-row-reverse;
-            @include boxDesign;
-        }
-        .activeCases {
-            grid-area: 4 / 1 / 4 / span 2;
-            background: $purple;
-            @include flex-row-reverse;
-            @include boxDesign;
-        }
-        .cases, .deaths, .recovered, .activeCases {
-            img {
-                max-width: 6rem;
-            }
-        }
-        #newCases, #newDeaths, #newRecovered, #cases, #deaths, #recovered, #activeCases {
-            max-width: 8rem;
-            font-size: 2rem;
-            font-weight: 900;
-        }
-        .deathRatio {
-            grid-area: 5 / 6 / 5 / span 2;
-            background-color: $green;
-            color: $white;
-            @include boxDesign();
-            @include flex-row-reverse();
-            flex-direction: row;
-            padding: 1rem;
-        }
-        .recoveryRatio {
-            grid-area: 5 / 4 / 5 / span 2;
-            background-color: $blue;
-            color: $white;
-            @include boxDesign();
-            @include flex-row-reverse();
-            flex-direction: row;
-            padding: 1rem;
-        }
-        .activeRatio{
-            grid-area: 5 / 2 / 5 / span 2;
-            background-color: $gray;
-            color: $white;
-            @include boxDesign();
-            @include flex-row-reverse();
-            padding: 1rem 0 ;
-            h1 {
-                font-size: 1.35rem;
-            }
-        }
-
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 5px;
+      padding: 1rem 1rem;
+      font-size: 1rem;
+      font-family: "Cairo", sans-serif;
+      cursor: pointer;
+      img {
+        width: 3rem;
+        margin-right: 1rem;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
     }
+  }
+  .main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows:
+      auto minmax(max-content, 10rem) auto minmax(max-content, 8rem)
+      auto;
+    gap: 1.5rem;
+    margin: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: $bgColor;
+    @include boxDesign;
+    .text {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: baseline;
+      grid-area: 1 / 1 / 1 / span 8;
+      h1 {
+        margin-left: 1rem;
+        font-size: 2rem;
+      }
+    }
+    .newCases {
+      grid-area: 2 / 6 / 2 / span 2;
+      background: $yellow;
+      @include boxDesign;
+      @include flex-row-reverse();
+      padding-bottom: 0.25rem;
+    }
+    .newDeaths {
+      grid-area: 2 / 4 / 2 / span 2;
+      @include flex-row-reverse();
+      background: $red;
+      @include boxDesign;
+    }
+    .newRecovers {
+      grid-area: 2 / 2 / 2 / span 2;
+      @include flex-row-reverse();
+      background: $mintGreen;
+      @include boxDesign;
+    }
+    .newCases,
+    .newDeaths,
+    .newRecovers {
+      padding: 0.5rem;
+      img {
+        max-width: 8rem;
+      }
+    }
+    .allCases {
+      font-size: 2rem;
+      grid-area: 3 / 1 / 3 / span 8;
+      text-align: end;
+    }
+    .cases {
+      grid-area: 4 / 7 / 4 / span 2;
+      background: $yellow;
+      @include flex-row-reverse;
+      @include boxDesign;
+      padding-bottom: 0.25rem;
+    }
+    .deaths {
+      grid-area: 4 / 5 / 4 / span 2;
+      background: $red;
+      @include flex-row-reverse;
+      @include boxDesign;
+    }
+    .recovered {
+      grid-area: 4 / 3 / 4 / span 2;
+      background: $mintGreen;
+      @include flex-row-reverse;
+      @include boxDesign;
+    }
+    .activeCases {
+      grid-area: 4 / 1 / 4 / span 2;
+      background: $purple;
+      @include flex-row-reverse;
+      @include boxDesign;
+    }
+    .cases,
+    .deaths,
+    .recovered,
+    .activeCases {
+      img {
+        max-width: 6rem;
+      }
+    }
+    #newCases,
+    #newDeaths,
+    #newRecovered,
+    #cases,
+    #deaths,
+    #recovered,
+    #activeCases {
+      max-width: 8rem;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    .deathRatio {
+      grid-area: 5 / 6 / 5 / span 2;
+      background-color: $green;
+      color: $white;
+      @include boxDesign();
+      @include flex-row-reverse();
+      flex-direction: row;
+      padding: 1rem;
+    }
+    .recoveryRatio {
+      grid-area: 5 / 4 / 5 / span 2;
+      background-color: $blue;
+      color: $white;
+      @include boxDesign();
+      @include flex-row-reverse();
+      flex-direction: row;
+      padding: 1rem;
+    }
+    .activeRatio {
+      grid-area: 5 / 2 / 5 / span 2;
+      background-color: $gray;
+      color: $white;
+      @include boxDesign();
+      @include flex-row-reverse();
+      padding: 1rem 0;
+      h1 {
+        font-size: 1.35rem;
+      }
+    }
+  }
 }
 
 .two {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    row-gap: 1rem;
-    grid-template-rows: auto minmax(max-content, 8rem) minmax(max-content, 8rem) minmax(max-content, 8rem);
-    .recordHeading {
-        grid-column: 1/ span 9;
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid $black;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  row-gap: 1rem;
+  grid-template-rows: auto minmax(max-content, 8rem) minmax(max-content, 8rem) minmax(
+      max-content,
+      8rem
+    );
+  .recordHeading {
+    grid-column: 1 / span 9;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid $black;
+  }
+  .recordOne {
+    grid-column: 2 / span 7;
+    background-color: $purple;
+    @include boxDesign();
+    @include flex-row-reverse();
+    flex-wrap: nowrap;
+  }
+  .recordTwo {
+    grid-column: 2 / span 7;
+    background-color: $rose;
+    @include boxDesign();
+    @include flex-row-reverse();
+    flex-wrap: nowrap;
+  }
+  .recordThree {
+    grid-column: 2 / span 7;
+    background-color: $mintGreen;
+    @include boxDesign();
+    @include flex-row-reverse();
+    flex-wrap: nowrap;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .recordOne,
+  .recordTwo,
+  .recordThree {
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-left: 1px solid $black;
+      padding-left: 0.5rem;
     }
-    .recordOne {
-        grid-column: 2 / span 7;
-        background-color: $purple;
-        @include boxDesign();
-        @include flex-row-reverse();
-        flex-wrap: nowrap;
+    div:nth-child(6) {
+      border: none;
     }
-    .recordTwo {
-        grid-column: 2 / span 7;
-        background-color: $rose;
-        @include boxDesign();
-        @include flex-row-reverse();
-        flex-wrap: nowrap;
-    }
-    .recordThree {
-        grid-column: 2 / span 7;
-        background-color: $mintGreen;
-        @include boxDesign();
-        @include flex-row-reverse();
-        flex-wrap: nowrap;
-    }
-    h1 {
-        font-size: 2rem;
-        font-weight: 700;
-    }
-    .recordOne, .recordTwo, .recordThree {
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-left: 1px solid $black;
-            padding-left: .5rem;
-
-        }
-        div:nth-child(6) {
-            border: none;
-        }
-    }
+  }
 }
 .three {
-    h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin: 1.5rem 0;
-        border-bottom: 2px solid $black;
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    border-bottom: 2px solid $black;
+  }
+  .instructions {
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+    background-color: $bgColor;
+    @include boxDesign();
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    img {
+      max-width: 15rem;
     }
-    .instructions {
-        padding: 1rem 0;
-        margin: 0 1.5rem;
-        background-color: $bgColor;
-        @include boxDesign();
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        img {
-            max-width: 15rem;
-        }
-        p {
-            font-size: 1.25rem;
-            font-weight: 400;
-            text-align: right;
-        }
+    p {
+      font-size: 1.25rem;
+      font-weight: 400;
+      text-align: right;
     }
+  }
 }
 footer {
-    border-top: 2px solid $black;
-    max-height: 5rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding: 0 1.5rem;
-    h1 {
-        font-size: 1.75rem;
-        font-weight: 600;
+  border-top: 2px solid $black;
+  max-height: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 1.5rem;
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+  a:nth-child(1) {
+    text-decoration: none;
+    color: $gray;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: #4bddf0;
     }
-    a:nth-child(1) {
-        text-decoration: none;
-        color: $gray;
-        transition: all 0.4s ease-in-out;
-        &:hover {
-            color: #4bddf0 ;
-                
-        }
-        img:nth-child(1) {
-            max-width: 3rem;
-            
-        }
+    img:nth-child(1) {
+      max-width: 3rem;
     }
-    a:nth-child(2) {
-        img {
-            max-width: 10rem;
-        }
+  }
+  a:nth-child(2) {
+    img {
+      max-width: 10rem;
     }
+  }
 }
 
 @media (max-width: 1400px) {
-    nav {
-        #burger-menu.active {
-            margin-left: 70%;
-        }
+  nav {
+    #burger-menu.active {
+      margin-left: 70%;
     }
-    .two {
-        .recordOne, .recordTwo, .recordThree {
-            div {
-                padding: 0;
-                }
-            }
-        }
+  }
+  .two {
+    .recordOne,
+    .recordTwo,
+    .recordThree {
+      div {
+        padding: 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 1024px) {
-    nav {
-        #burger-menu.active {
-            margin-left: 60%;
-        }
+  nav {
+    #burger-menu.active {
+      margin-left: 60%;
     }
-    .recovered, .deaths {
-        img { 
-            margin-right: 0.5rem;
-        }
+  }
+  .recovered,
+  .deaths {
+    img {
+      margin-right: 0.5rem;
     }
-    .three {
+  }
+  .three {
     .instructions {
-        img {
-            max-width: 12rem;
-        }
-        p {
-          font-size: 1.15rem;
-        }
+      img {
+        max-width: 12rem;
+      }
+      p {
+        font-size: 1.15rem;
+      }
     }
+  }
+  footer {
+    h1 {
+      font-size: 1.5rem;
     }
-    footer {
-        h1 {
-            font-size: 1.5rem;
-        }
-    }
+  }
 }
 
 @media (max-width: 768px) {
-    nav {
-        .icon {
-            top: 0;
-            margin-top: 0.5rem;
-        }
-        #burger-menu.active {
-            margin-left: 150%;
-        }
+  nav {
+    .icon {
+      top: 0;
+      margin-top: 0.5rem;
     }
-    .one {
-        .main {
-            grid-template-rows: auto minmax(max-content, 10rem)  minmax(max-content, 10rem) minmax(max-content, 10rem) auto minmax(max-content,8rem) minmax(max-content,8rem) minmax(max-content,8rem) minmax(max-content,8rem) auto;;
-            padding: 1.5rem 0rem;
-          .text {
-              h1 {
-                  font-size: 3rem;
-              }
-              #updated {
-                font-size: 1rem ;
-              }
-              flex-direction: column;
-              align-items: center;
-            }
-            
-          .newCases {
-              grid-area: 2 / 2 / 2 / span 6;
-          }
-          .newDeaths {
-              grid-area: 3 / 2 / 3 / span 6; 
-              img {
-                   width: 7.5rem;
-              }
-          }
-          .newRecovers {
-              grid-area: 4 / 2 / 4 / span 6;
-          }
-          .allCases {
-              text-align: center;
-              grid-area: 5 / 2 / 5 / span 6;
-          }
-          .activeCases {
-              grid-area: 9 / 2 / 9 / span 6;
-          }
-          .recovered {
-              grid-area: 8 / 2 / 8 / span 6;
-          }
-          .deaths {
-              grid-area: 7 / 2 / 7 / span 6;
-          }
-          .cases {
-              grid-area: 6 / 2 / 6 / span 6;
-          }
-          .deathRatio {
-            grid-area: 10 / 2 / 10 / span 6;
-          }
-          .recoveryRatio {
-            grid-area: 11 / 2 / 11 / span 6;
-          }
-          .activeRatio {
-            grid-area: 12 / 2 / 12 / span 6;
-          }
+    #burger-menu.active {
+      margin-left: 150%;
     }
-}
-
-    .two {
+  }
+  .one {
+    .main {
+      grid-template-rows:
+        auto minmax(max-content, 10rem) minmax(max-content, 10rem)
+        minmax(max-content, 10rem) auto minmax(max-content, 8rem) minmax(
+          max-content,
+          8rem
+        )
+        minmax(max-content, 8rem) minmax(max-content, 8rem) auto;
+      padding: 1.5rem 0rem;
+      .text {
         h1 {
-            font-size: 1.65rem;
+          font-size: 3rem;
         }
-        .recordOne, .recordTwo, .recordThree {
-            margin: 0rem 2rem;
-            grid-column: 1 / span 10 ;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: stretch;
-            div {
-                padding: 0.75rem;
-                border-left: none;
-                border-bottom: 1px solid $black;
-                flex-wrap: nowrap;
-                flex-direction: row-reverse;
-                justify-content: space-between;
-                align-items: baseline;
-            }
+        #updated {
+          font-size: 1rem;
         }
-    }
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .three {
-        .instructions {
-            height: 31.25rem;
-            flex-direction: column;
-            img {
-                max-width: 15rem;
-            }
-
+      .newCases {
+        grid-area: 2 / 2 / 2 / span 6;
+      }
+      .newDeaths {
+        grid-area: 3 / 2 / 3 / span 6;
+        img {
+          width: 7.5rem;
         }
       }
+      .newRecovers {
+        grid-area: 4 / 2 / 4 / span 6;
+      }
+      .allCases {
+        text-align: center;
+        grid-area: 5 / 2 / 5 / span 6;
+      }
+      .activeCases {
+        grid-area: 9 / 2 / 9 / span 6;
+      }
+      .recovered {
+        grid-area: 8 / 2 / 8 / span 6;
+      }
+      .deaths {
+        grid-area: 7 / 2 / 7 / span 6;
+      }
+      .cases {
+        grid-area: 6 / 2 / 6 / span 6;
+      }
+      .deathRatio {
+        grid-area: 10 / 2 / 10 / span 6;
+      }
+      .recoveryRatio {
+        grid-area: 11 / 2 / 11 / span 6;
+      }
+      .activeRatio {
+        grid-area: 12 / 2 / 12 / span 6;
+      }
+    }
+  }
+
+  .two {
+    h1 {
+      font-size: 1.65rem;
+    }
+    .recordOne,
+    .recordTwo,
+    .recordThree {
+      margin: 0rem 2rem;
+      grid-column: 1 / span 10;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      div {
+        padding: 0.75rem;
+        border-left: none;
+        border-bottom: 1px solid $black;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+  }
+
+  .three {
+    .instructions {
+      height: 31.25rem;
+      flex-direction: column;
+      img {
+        max-width: 15rem;
+      }
+    }
+  }
 }
 @media (max-width: 480px) {
-    nav {
-        #burger-menu.active {
-            margin-left: 130%;
-        }
-         padding: 0 0.5rem;
-        div {
-            h1 {
-                font-size: 1.5rem;
-            }
-        }
-        .drop {
-            width: 11rem;
-           img {
-               height: 1.5rem;
-           }
-        }
+  nav {
+    #burger-menu.active {
+      margin-left: 130%;
     }
-    .one {
-        #countryName {
-            font-size: 1.2rem ;
-        }
+    padding: 0 0.5rem;
+    div {
+      h1 {
+        font-size: 1.5rem;
+      }
     }
-    .three {
-        .instructions {
-            height: auto;
-        }
+    .drop {
+      width: 11rem;
+      img {
+        height: 1.5rem;
+      }
     }
+  }
+  .one {
+    #countryName {
+      font-size: 1.2rem;
+    }
+  }
+  .three {
+    .instructions {
+      height: auto;
+    }
+  }
 
-    footer {
-        flex-wrap: wrap-reverse;
-        max-height: fit-content;
-        justify-content: center;
-        padding: 1rem;
-    }
-
+  footer {
+    flex-wrap: wrap-reverse;
+    max-height: fit-content;
+    justify-content: center;
+    padding: 1rem;
+  }
 }
