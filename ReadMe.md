@@ -12,7 +12,7 @@ Sketched by Figma
 
 Live 🚀👩‍🚀
 
-https://www.coronaarabia.com/
+https://coronarabia.netlify.app/
 
 ## License
 
